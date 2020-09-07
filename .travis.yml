@@ -1,4 +1,5 @@
 sudo: required
+language: generic
 services:
   - docker
 
@@ -25,10 +26,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'eu-west-2'
-  app: 'multi-docker'
-  env: 'multidocker-env'
+  app: 'docker-multi'
+  env: 'dockermulti-env'
   bucket_name: 'elasticbeanstalk-eu-west-2-959206288261'
-  bucket_path: 'multi-docker'
+  bucket_path: 'docker-multi'
   on:
     branch: master
   access_key_id: $access_key_id
