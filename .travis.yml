@@ -26,10 +26,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'eu-west-2'
-  app: 'docker-multi'
-  env: 'DockerMulti-env'
+  app: 'docker-multi2'
+  env: 'DockerMulti2-env'
   bucket_name: 'elasticbeanstalk-eu-west-2-959206288261'
-  bucket_path: 'docker-multi'
+  bucket_path: 'docker-multi2'
   on:
     branch: master
   access_key_id: $access_key_id
