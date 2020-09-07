@@ -1,0 +1,38 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [ 
+	{ 
+		  "name": "client",
+		  "image": "kracklabs/multi-client",
+		  "hostname": "client",
+		  "essential": false
+	},
+	{
+		"name": "server",
+		"image": "kracklabs/multi-server",
+		"hostname": "api",
+		"essential": false
+	},
+	{
+		"name":"worker",
+		"image": "kracklabs/multi-worker",
+		"hostname": "worker",
+		"essential": false
+	},
+	{
+		"name": "nginx",
+		"image": "kracklabs/multi-nginx",
+		"essential": true,
+		"portMappings": [
+			{
+				"hostPort": 80,
+				"containerPort": 80
+			}
+		],
+		"links" : ["client", "server"]
+	}
+
+
+
+  ]
+}
